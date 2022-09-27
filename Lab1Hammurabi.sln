@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab1Hammurabi", "Lab1Hammurabi\Lab1Hammurabi.vcxproj", "{6AE89AEE-4672-4617-83C7-5227B114A9ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6AE89AEE-4672-4617-83C7-5227B114A9ED}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6AE89AEE-4672-4617-83C7-5227B114A9ED}.Debug|Win32.Build.0 = Debug|Win32
+		{6AE89AEE-4672-4617-83C7-5227B114A9ED}.Debug|x64.ActiveCfg = Debug|x64
+		{6AE89AEE-4672-4617-83C7-5227B114A9ED}.Debug|x64.Build.0 = Debug|x64
+		{6AE89AEE-4672-4617-83C7-5227B114A9ED}.Release|Win32.ActiveCfg = Release|Win32
+		{6AE89AEE-4672-4617-83C7-5227B114A9ED}.Release|Win32.Build.0 = Release|Win32
+		{6AE89AEE-4672-4617-83C7-5227B114A9ED}.Release|x64.ActiveCfg = Release|x64
+		{6AE89AEE-4672-4617-83C7-5227B114A9ED}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+EndGlobal
