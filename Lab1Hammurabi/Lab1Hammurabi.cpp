@@ -110,12 +110,21 @@ struct HammurabiConfig
     }
 };
 
+enum RoundResultEnum
+{
+    kStarve,
+    kNoCitizen,
+    kOk,
+};
+
+
 class ActionResult
 {
 public:
-    ActionResult(bool is_lose_result, string action_status_info)
+    ActionResult(bool is_lose_result, const string& action_status_info, RoundResultEnum result_enum)
         : is_lose_result_(is_lose_result),
-          action_status_info_(move(action_status_info))
+          action_status_info_(action_status_info),
+          result_enum_(result_enum)
     {
     }
 
@@ -132,13 +141,26 @@ public:
 private:
     bool is_lose_result_ = false;
     string action_status_info_;
+    RoundResultEnum result_enum_ = kOk;
 };
 
-enum ActionResultEnum
+class ActionResultBuilder
 {
-    kStarve,
-    kNoCitizen,
-    kOk,
+public:
+    static ActionResult BuildOkResult(string status_info)
+    {
+        return ActionResult(false, status_info, kOk);
+    }
+
+    static ActionResult BuildStarveResult(string status_info)
+    {
+        return ActionResult(true, status_info, kStarve);
+    }
+
+    static ActionResult BuildNoCitizenResult(string status_info)
+    {
+        return ActionResult(true, status_info, kNoCitizen);
+    }
 };
 
 class IRoundAction
@@ -157,8 +179,12 @@ public:
         int income = city.GetAcreAmount() * acreWheatIncome;
         city.AddWheatAmount(income);
         shared_info.AcreWheatIncome = acreWheatIncome;
-        return ActionResult(false, "WheatIncomeAction:\n AcreAmount-" + to_string(city.GetAcreAmount())
-                            + " * acreWheatIncome-" + to_string(acreWheatIncome) + "=" + to_string(income));
+
+        string result_status_info = "WheatIncomeAction:\n AcreAmount-" + to_string(city.GetAcreAmount())
+            + " * acreWheatIncome-" + to_string(acreWheatIncome) + "=" + to_string(income);
+
+
+        return ActionResultBuilder::BuildOkResult(result_status_info);
     }
 };
 
@@ -171,9 +197,10 @@ public:
         int wheatAte = city.GetWheatAmount() * (ratsPercentage / static_cast<float>(100));
         city.RemoveWheatAmount(wheatAte);
 
-        return ActionResult(false,
-                            "ratsPercentage: " + to_string(ratsPercentage) + "\n"
-                            + "wheatAte: " + to_string(wheatAte));
+        string result_status_info = "ratsPercentage: " + to_string(ratsPercentage) + "\n"
+            + "wheatAte: " + to_string(wheatAte);
+
+        return ActionResultBuilder::BuildOkResult(result_status_info);
     }
 };
 
@@ -203,8 +230,11 @@ public:
         int wheat_consumed = citizenCanAlive * config.citizen_wheat_consumption * citizenCanAlive;
         city.RemoveWheatAmount(wheat_consumed);
 
-        return ActionResult(isLose, "deadPercentage: " + to_string(deadPercentage) + "\n"
-                            + "deadCitizen: " + to_string(deadCitizen));
+        string result_status_info = "deadPercentage: " + to_string(deadPercentage) + "\n"
+            + "deadCitizen: " + to_string(deadCitizen);
+
+        if (isLose) return ActionResultBuilder::BuildStarveResult(result_status_info);
+        return ActionResultBuilder::BuildOkResult(result_status_info);
     }
 };
 
@@ -217,7 +247,10 @@ public:
         int citizenIncome = shared_info.StarvedCitizen / 2 + (5 - shared_info.AcreWheatIncome) * city.GetWheatAmount() /
             600 + 1;
         city.AddCitizen(citizenIncome);
-        return ActionResult(false, "CitizenIncome: " + to_string(citizenIncome));
+
+        string result_status_info = "CitizenIncome: " + to_string(citizenIncome);
+
+        return ActionResultBuilder::BuildOkResult(result_status_info);
     }
 };
 
@@ -234,8 +267,9 @@ public:
         int deadCount = city.GetCitizenAmount() * (config.plaque_dead_modifer);
         if (wasPlaque) city.RemoveDeadCitizen(deadCount);
 
-        return ActionResult(false, "wasPlaque: " + to_string(wasPlaque) + "\n" +
-                            "deadCount" + to_string(deadCount));
+        string result_status_info = "wasPlaque: " + to_string(wasPlaque) + "\n" +
+            "deadCount" + to_string(deadCount);
+        return ActionResultBuilder::BuildOkResult(result_status_info);
     }
 };
 
@@ -279,6 +313,7 @@ public:
 
 int main(int argc, char* argv[])
 {
+    srand(time(nullptr));
     City city = City{100, 2800, 1000};
     HammurabiConfig config = HammurabiConfig{};
 
@@ -298,7 +333,7 @@ int main(int argc, char* argv[])
         &plaque_action,
     };
 
-    int roundsCount = 1;
+    int roundsCount = 10;
 
     for (int i = 0; i < roundsCount; ++i)
     {
