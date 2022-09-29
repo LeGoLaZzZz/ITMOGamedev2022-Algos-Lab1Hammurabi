@@ -21,8 +21,8 @@ public:
         for (int i = 0; i < round_actions_count_; ++i)
         {
             IRoundAction* round_action = round_actions_[i];
-            ActionResult action_result = round_action->DoRoundAction(city, config, shared_info,game_logger);
-            std::cout << action_result.ActionStatusInfo() << std::endl;
+            ActionResult action_result = round_action->DoRoundAction(city, config, shared_info, game_logger);
+            std::cout << action_result.ActionStatusInfo() << std::endl<< std::endl;
 
             if (action_result.IsLoseResult())
             {
@@ -30,12 +30,8 @@ public:
                 break;
             }
         }
-
-        std::cout << "Wheat total:" << to_string(city.GetWheatAmount()) << endl;
-        std::cout << "Citizen total:" << to_string(city.GetCitizenAmount()) << endl;
-        std::cout << "Acre total:" << to_string(city.GetAcreAmount()) << endl;
+        std::cout << game_logger.GetCityStatus(city) << std::endl;
     }
-
 
 
 private:

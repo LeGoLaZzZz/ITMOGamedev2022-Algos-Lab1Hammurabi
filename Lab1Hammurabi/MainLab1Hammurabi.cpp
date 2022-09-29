@@ -26,7 +26,7 @@ int main()
     auto plaque_action = PlaqueAction{};
 
     auto logger = TestGameLogger{};
-    
+
     IRoundAction* round_actions[5]
     {
         &wheat_income_action,
@@ -41,7 +41,8 @@ int main()
     for (int i = 0; i < rounds_count; ++i)
     {
         auto round = Round(round_actions, 5);
-        round.PlayRound(city, config,logger);
+        std::cout << "___Round: " << i + 1 << "___" << std::endl << std::endl;
+        round.PlayRound(city, config, logger);
     }
 
     return 0;

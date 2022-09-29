@@ -12,7 +12,7 @@ ActionResult CitizenWheatConsumptionAction::DoRoundAction(City& city, HammurabiC
 
     if (deadCitizen > 0)
     {
-        deadPercentage = deadCitizen / city.GetCitizenAmount();
+        deadPercentage = deadCitizen * 100 / static_cast<float>(city.GetCitizenAmount());
         city.RemoveDeadCitizen(deadCitizen);
     }
     else
@@ -22,10 +22,11 @@ ActionResult CitizenWheatConsumptionAction::DoRoundAction(City& city, HammurabiC
     shared_info.StarvedCitizenCount = deadCitizen;
     bool isLose = deadPercentage >= config.citizen_starved_lose_condition;
 
-    int wheat_consumed = citizenCanAlive * config.citizen_wheat_consumption * citizenCanAlive;
+    int wheat_consumed = citizenCanAlive * config.citizen_wheat_consumption;
     city.RemoveWheatAmount(wheat_consumed);
 
-    string result_status_info = logger.GetStatusCitizenWheatConsumption(city, deadPercentage, deadCitizen);
+    string result_status_info = logger.GetStatusCitizenWheatConsumption(city, wheat_consumed, deadPercentage,
+                                                                        deadCitizen);
 
     if (isLose) return ActionResultBuilder::BuildStarveResult(result_status_info);
     return ActionResultBuilder::BuildOkResult(result_status_info);
