@@ -6,7 +6,7 @@ string TestGameLogger::GetStatusWheatIncome(City& city, int random_acre_wheat_in
 {
     std::stringstream ss;
     ss << "_WheatIncomeAction_" << endl;
-    ss << "  AcreAmount:" << to_string(handled_acres) << endl;
+    ss << "  Handled_acres:" << to_string(handled_acres) << endl;
     ss << "  AcreWheatIncome:" << to_string(random_acre_wheat_income) << endl;
     ss << "  TotalIncome:" << to_string(income) << endl;
     ss << "  TotalCityWheat:" << to_string(city.GetWheatAmount()) << endl;
@@ -81,6 +81,37 @@ string TestGameLogger::GetGameResultText(City& city, GameResultData result_data)
     ss << "  result:" << to_string(result_data.result) << endl;
     ss << "  average_hunger_percentage_P:" << to_string(result_data.average_hunger_percentage_P) << endl;
     ss << "  acre_per_citizen_L:" << to_string(result_data.acre_per_citizen_L) << endl;
+
+    return ss.str();
+}
+
+string TestGameLogger::GetAcreCostText(City& city, int acre_cost)
+{
+    std::stringstream ss;
+    ss << "_acre_cost_" << to_string(acre_cost) << endl;
+
+    return ss.str();
+}
+
+string TestGameLogger::GetPlayerInputReaction(City& city, PlayerInputResult result)
+{
+    std::stringstream ss;
+
+    switch (result)
+    {
+    case PlayerInputResult::kOk: break;
+    case kNoWheat: ss << "Input Result: kNoWheat" << endl;
+        break;
+    case kNegativeNumber: ss << "Input Result: kNegativeNumber" << endl;
+        break;
+    case kNotNumber: ss << "Input Result: kNotNumber" << endl;
+        break;
+    case kTooBigNumber: ss << "Input Result: kTooBigNumber" << endl;
+        break;
+    case kNoAcres: ss << "Input Result: kNoAcres" << endl;
+        break;
+    default: ;
+    }
 
     return ss.str();
 }

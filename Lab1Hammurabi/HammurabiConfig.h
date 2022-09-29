@@ -12,6 +12,7 @@ struct HammurabiConfig
     float plaque_chance = 0.15f;
     IntMinMax wheat_income_range = {1, 6};
     IntMinMax rats_percentage_range = {1, 7};
+    IntMinMax acre_cost_range = {17, 26};
 
     int GetRandomWheatIncome() const
     {
@@ -21,5 +22,10 @@ struct HammurabiConfig
     int GetRandomRatsPercentage() const
     {
         return rats_percentage_range.GetRandomRange();
+    }
+
+    int GetRandomAcreCost() const
+    {
+        return acre_cost_range.GetRandomRange();
     }
 };

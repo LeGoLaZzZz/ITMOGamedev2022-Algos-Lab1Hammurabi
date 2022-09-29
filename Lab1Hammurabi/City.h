@@ -7,9 +7,9 @@ class City
     int acre_amount_ = 0;
 public:
     City(int citizen_amount, float wheat_amount, int acre_amount)
-     : citizen_amount_(citizen_amount),
-       wheat_amount_(wheat_amount),
-       acre_amount_(acre_amount)
+        : citizen_amount_(citizen_amount),
+          wheat_amount_(wheat_amount),
+          acre_amount_(acre_amount)
     {
     }
 
@@ -32,4 +32,6 @@ public:
     void RemoveDeadCitizen(int dead_amount);
 
     void AddCitizen(int citizen_income);
+    void AddAcres(int acres_income);
+    void RemoveAcres(int acres_income);
 };

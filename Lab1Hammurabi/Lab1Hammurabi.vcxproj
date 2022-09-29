@@ -229,6 +229,7 @@
     </ClCompile>
     <ClCompile Include="Loggers\TestGameLogger.cpp" />
     <ClCompile Include="MainLab1Hammurabi.cpp" />
+    <ClCompile Include="PlayerGameInput\RoundCityManagement.cpp" />
     <ClCompile Include="RoundActions\ActionResult.cpp" />
     <ClCompile Include="RoundActions\ActionResultBuilder.cpp" />
     <ClCompile Include="RoundActions\CitizenIncome.cpp" />
@@ -241,6 +242,7 @@
     <ClCompile Include="Statistics\Statistic.cpp" />
     <ClInclude Include="Loggers\IGameLogger.h" />
     <ClInclude Include="Loggers\TestGameLogger.h" />
+    <ClInclude Include="PlayerGameInput\RoundCityManagement.h" />
     <ClInclude Include="RoundActions\ActionResultBuilder.h" />
     <ClInclude Include="RoundActions\CitizenIncome.h" />
     <ClInclude Include="RoundActions\CitizenWheatConsumptionAction.h" />

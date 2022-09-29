@@ -7,7 +7,7 @@ class ActionResultBuilder
 public:
     static ActionResult BuildOkResult(string status_info)
     {
-        return ActionResult{false, status_info, kOk};
+        return ActionResult{false, status_info, kRoundResultOk};
     }
 
     static ActionResult BuildStarveResult(string status_info)

@@ -27,5 +27,5 @@ public:
 private:
     bool is_lose_result_ = false;
     string action_status_info_;
-    RoundResultEnum result_enum_ = kOk;
+    RoundResultEnum result_enum_ = kRoundResultOk;
 };

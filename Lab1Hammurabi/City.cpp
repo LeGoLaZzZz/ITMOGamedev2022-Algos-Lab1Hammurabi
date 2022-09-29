@@ -51,3 +51,13 @@ void City::AddCitizen(int citizen_income)
 {
     citizen_amount_ += citizen_income;
 }
+
+void City::AddAcres(int acres_income)
+{
+    acre_amount_ += acres_income;
+}
+
+void City::RemoveAcres(int acres_income)
+{
+    acre_amount_ -= acres_income;
+}

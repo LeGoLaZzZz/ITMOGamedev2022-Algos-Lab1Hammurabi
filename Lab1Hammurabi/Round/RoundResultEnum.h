@@ -3,5 +3,5 @@ enum RoundResultEnum
 {
     kStarve,
     kNoCitizen,
-    kOk,
+    kRoundResultOk,
 };

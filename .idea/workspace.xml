@@ -17,33 +17,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed410121-61c7-467b-b8f3-2bcdeb8c09a5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/Loggers/IGameLogger.h" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/Loggers/IGameLogger.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/Loggers/TestGameLogger.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/Loggers/TestGameLogger.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/Loggers/TestGameLogger.h" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/Loggers/TestGameLogger.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/MainLab1Hammurabi.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/MainLab1Hammurabi.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/Round/Round.h" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/Round/Round.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/RoundActions/CitizenWheatConsumptionAction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/RoundActions/CitizenWheatConsumptionAction.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/RoundActions/PlaqueAction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/RoundActions/PlaqueAction.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/CitizenIncome.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/CitizenIncome.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/CitizenWheatConsumptionAction.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/CitizenWheatConsumptionAction.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/IGameLogger.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/IGameLogger.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/IRoundAction.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/IRoundAction.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/Lab1Hammurabi.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/Lab1Hammurabi.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/Lab1Hammurabi.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/Lab1Hammurabi.tlog/CL.command.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/Lab1Hammurabi.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/Lab1Hammurabi.tlog/CL.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/Lab1Hammurabi.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/Lab1Hammurabi.tlog/CL.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/MainLab1Hammurabi.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/MainLab1Hammurabi.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/PlaqueAction.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/PlaqueAction.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/RatsAction.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/RatsAction.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/Round.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/Round.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/TestGameLogger.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/TestGameLogger.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/WheatIncomeAction.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/WheatIncomeAction.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/vc142.idb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1Hammurabi/x64/Debug/vc142.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x64/Debug/Lab1Hammurabi.exe" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Lab1Hammurabi.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x64/Debug/Lab1Hammurabi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Lab1Hammurabi.pdb" afterDir="false" />
-    </list>
+    <list default="true" id="ed410121-61c7-467b-b8f3-2bcdeb8c09a5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

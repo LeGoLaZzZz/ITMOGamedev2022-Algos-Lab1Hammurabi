@@ -28,6 +28,7 @@ int main()
 
     auto logger = TestGameLogger{};
     auto statistic = Statistic{};
+    auto cityManagement = RoundCityManagement{};
 
     IRoundAction* round_actions[5]
     {
@@ -40,8 +41,11 @@ int main()
 
     constexpr int rounds_count = 10;
 
+
+    std::cout << logger.GetCityStatus(city) << std::endl;
     for (int i = 0; i < rounds_count; ++i)
     {
+        cityManagement.StartRoundManagement(city, config, logger);
         auto round = Round(round_actions, 5);
         std::cout << "___Round: " << i + 1 << "___" << std::endl << std::endl;
         round.PlayRound(city, config, logger);
