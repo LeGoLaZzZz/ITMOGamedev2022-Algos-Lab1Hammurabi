@@ -2,6 +2,7 @@
 #include <iostream>
 #include "City.h"
 #include "HammurabiConfig.h"
+#include "Loggers/TestGameLogger.h"
 #include "Round/Round.h"
 #include "RoundActions/CitizenIncome.h"
 #include "RoundActions/CitizenWheatConsumptionAction.h"
@@ -24,6 +25,8 @@ int main()
     auto citizen_income = CitizenIncome{};
     auto plaque_action = PlaqueAction{};
 
+    auto logger = TestGameLogger{};
+    
     IRoundAction* round_actions[5]
     {
         &wheat_income_action,
@@ -38,7 +41,7 @@ int main()
     for (int i = 0; i < rounds_count; ++i)
     {
         auto round = Round(round_actions, 5);
-        round.PlayRound(city, config);
+        round.PlayRound(city, config,logger);
     }
 
     return 0;

@@ -3,7 +3,7 @@
 #include "ActionResultBuilder.h"
 
 ActionResult CitizenWheatConsumptionAction::DoRoundAction(City& city, HammurabiConfig& config,
-                                                          RoundSharedInfo& shared_info)
+                                                          RoundSharedInfo& shared_info, IGameLogger& logger)
 {
     int citizenCanAlive = city.GetWheatAmount() / config.citizen_wheat_consumption;
     int deadCitizen = city.GetCitizenAmount() - citizenCanAlive;
@@ -25,8 +25,7 @@ ActionResult CitizenWheatConsumptionAction::DoRoundAction(City& city, HammurabiC
     int wheat_consumed = citizenCanAlive * config.citizen_wheat_consumption * citizenCanAlive;
     city.RemoveWheatAmount(wheat_consumed);
 
-    string result_status_info = "deadPercentage: " + to_string(deadPercentage) + "\n"
-        + "deadCitizen: " + to_string(deadCitizen);
+    string result_status_info = logger.GetStatusCitizenWheatConsumption(city, deadPercentage, deadCitizen);
 
     if (isLose) return ActionResultBuilder::BuildStarveResult(result_status_info);
     return ActionResultBuilder::BuildOkResult(result_status_info);

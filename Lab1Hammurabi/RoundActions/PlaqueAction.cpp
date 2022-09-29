@@ -2,7 +2,8 @@
 
 #include "ActionResultBuilder.h"
 
-ActionResult PlaqueAction::DoRoundAction(City& city, HammurabiConfig& config, RoundSharedInfo& shared_info)
+ActionResult PlaqueAction::DoRoundAction(City& city, HammurabiConfig& config, RoundSharedInfo& shared_info,
+                                         IGameLogger& logger)
 {
     float number = ((float)rand()) / RAND_MAX; // число от 0.0 до 1.0
 
@@ -11,7 +12,7 @@ ActionResult PlaqueAction::DoRoundAction(City& city, HammurabiConfig& config, Ro
     int deadCount = city.GetCitizenAmount() * (config.plaque_dead_modifer);
     if (wasPlaque) city.RemoveDeadCitizen(deadCount);
 
-    string result_status_info = "wasPlaque: " + to_string(wasPlaque) + "\n" +
-        "deadCount" + to_string(deadCount);
+    string result_status_info = logger.GetStatusPlaqueAction(city, wasPlaque, deadCount);
+
     return ActionResultBuilder::BuildOkResult(result_status_info);
 }

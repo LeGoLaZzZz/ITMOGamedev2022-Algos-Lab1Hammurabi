@@ -7,7 +7,6 @@
 #include "../City.h"
 
 
-class IRoundAction;
 struct HammurabiConfig;
 
 using namespace std;
@@ -17,12 +16,12 @@ class Round
 public:
     RoundSharedInfo shared_info;
 
-    void PlayRound(City& city, HammurabiConfig& config)
+    void PlayRound(City& city, HammurabiConfig& config, IGameLogger& game_logger)
     {
         for (int i = 0; i < round_actions_count_; ++i)
         {
             IRoundAction* round_action = round_actions_[i];
-            ActionResult action_result = round_action->DoRoundAction(city, config, shared_info);
+            ActionResult action_result = round_action->DoRoundAction(city, config, shared_info,game_logger);
             std::cout << action_result.ActionStatusInfo() << std::endl;
 
             if (action_result.IsLoseResult())
@@ -36,6 +35,8 @@ public:
         std::cout << "Citizen total:" << to_string(city.GetCitizenAmount()) << endl;
         std::cout << "Acre total:" << to_string(city.GetAcreAmount()) << endl;
     }
+
+
 
 private:
     IRoundAction** round_actions_;
