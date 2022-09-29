@@ -1,5 +1,6 @@
 #include "TestGameLogger.h"
 #include <sstream>
+#include "../Statistics/Statistic.h"
 
 string TestGameLogger::GetStatusWheatIncome(City& city, int random_acre_wheat_income, int handled_acres, int income)
 {
@@ -69,6 +70,17 @@ string TestGameLogger::GetCityStatus(City& city)
     ss << "  Wheat total:" << to_string(city.GetWheatAmount()) << endl;
     ss << "  Citizen total:" << to_string(city.GetCitizenAmount()) << endl;
     ss << "  Acre total:" << to_string(city.GetAcreAmount()) << endl;
+
+    return ss.str();
+}
+
+string TestGameLogger::GetGameResultText(City& city, GameResultData result_data)
+{
+    std::stringstream ss;
+    ss << "___GameResult___" << endl;
+    ss << "  result:" << to_string(result_data.result) << endl;
+    ss << "  average_hunger_percentage_P:" << to_string(result_data.average_hunger_percentage_P) << endl;
+    ss << "  acre_per_citizen_L:" << to_string(result_data.acre_per_citizen_L) << endl;
 
     return ss.str();
 }

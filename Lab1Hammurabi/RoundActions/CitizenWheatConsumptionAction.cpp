@@ -20,6 +20,7 @@ ActionResult CitizenWheatConsumptionAction::DoRoundAction(City& city, HammurabiC
         deadCitizen = 0;
     }
     shared_info.StarvedCitizenCount = deadCitizen;
+    shared_info.StarvedCitizenPercentage = deadPercentage;
     bool isLose = deadPercentage >= config.citizen_starved_lose_condition;
 
     int wheat_consumed = citizenCanAlive * config.citizen_wheat_consumption;

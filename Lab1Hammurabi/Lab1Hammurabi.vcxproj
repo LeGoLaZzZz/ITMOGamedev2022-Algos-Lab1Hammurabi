@@ -238,6 +238,7 @@
     <ClCompile Include="RoundActions\RatsAction.cpp" />
     <ClCompile Include="RoundActions\WheatIncomeAction.cpp" />
     <ClCompile Include="Round\Round.cpp" />
+    <ClCompile Include="Statistics\Statistic.cpp" />
     <ClInclude Include="Loggers\IGameLogger.h" />
     <ClInclude Include="Loggers\TestGameLogger.h" />
     <ClInclude Include="RoundActions\ActionResultBuilder.h" />
@@ -320,6 +321,7 @@
       <SDLCheck>true</SDLCheck>
       <LinkCompiled>true</LinkCompiled>
     </ClInclude>
+    <ClInclude Include="Statistics\Statistic.h" />
 
   </ItemGroup>
   <ItemGroup>

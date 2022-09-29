@@ -10,6 +10,7 @@
 #include "RoundActions/PlaqueAction.h"
 #include "RoundActions/RatsAction.h"
 #include "RoundActions/WheatIncomeAction.h"
+#include "Statistics/Statistic.h"
 
 using namespace std;
 
@@ -26,6 +27,7 @@ int main()
     auto plaque_action = PlaqueAction{};
 
     auto logger = TestGameLogger{};
+    auto statistic = Statistic{};
 
     IRoundAction* round_actions[5]
     {
@@ -43,7 +45,11 @@ int main()
         auto round = Round(round_actions, 5);
         std::cout << "___Round: " << i + 1 << "___" << std::endl << std::endl;
         round.PlayRound(city, config, logger);
+        statistic.EndRoundStat(round, city);
     }
+
+    std::cout << logger.GetGameResultText(city, statistic.GetGameResult(city));
+
 
     return 0;
 }

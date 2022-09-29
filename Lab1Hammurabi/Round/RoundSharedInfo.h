@@ -4,7 +4,7 @@ class RoundSharedInfo
 {
 public:
     int StarvedCitizenCount;
-    int StarvedCitizenPercentage;
+    float StarvedCitizenPercentage;
     int AcreWheatIncome;
     int AcrePerCitizenCount;
 };

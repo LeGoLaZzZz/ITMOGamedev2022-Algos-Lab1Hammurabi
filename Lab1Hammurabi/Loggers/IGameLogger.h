@@ -2,6 +2,8 @@
 #include <string>
 #include "../City.h"
 
+class GameResultData;
+
 class IGameLogger
 {
 public:
@@ -13,4 +15,5 @@ public:
     virtual std::string GetStatusCitizenIncome(City& city, int citizensIncome) =0;
     virtual std::string GetStatusPlaqueAction(City& city, bool wasPlaque, int deadCount) =0;
     virtual std::string GetCityStatus(City& city) =0;
+    virtual std::string GetGameResultText(City& city, GameResultData result_data) =0;
 };

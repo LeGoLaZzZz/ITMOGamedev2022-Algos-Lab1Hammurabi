@@ -14,4 +14,5 @@ public:
     std::string GetStatusCitizenIncome(City& city, int citizensIncome) override;
     std::string GetStatusPlaqueAction(City& city, bool wasPlaque, int deadCount) override;
     std::string GetCityStatus(City& city) override;
+    std::string GetGameResultText(City& city, GameResultData result_data) override;
 };
