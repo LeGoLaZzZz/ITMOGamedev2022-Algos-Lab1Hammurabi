@@ -16,6 +16,11 @@ public:
     std::string GetCityStatus(City& city) override;
     std::string GetGameResultText(City& city, GameResultData result_data) override;
     std::string GetAcreCostText(City& city, int acre_cost) override;
+
+    std::string GetAcreBuyText(City& city) override;
+    std::string GetAcreSellText(City& city) override;
+    std::string GetWheatFoodText(City& city) override;
+    std::string GetWheatSeedText(City& city) override;
     
     std::string GetPlayerInputReaction(City& city, PlayerInputResult result) override;
 };

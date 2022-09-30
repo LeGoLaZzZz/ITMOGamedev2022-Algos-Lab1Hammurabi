@@ -93,6 +93,38 @@ string TestGameLogger::GetAcreCostText(City& city, int acre_cost)
     return ss.str();
 }
 
+string TestGameLogger::GetAcreBuyText(City& city)
+{
+    std::stringstream ss;
+    ss << "Enter acre count to buy:";
+    return ss.str();
+}
+
+
+string TestGameLogger::GetAcreSellText(City& city)
+{
+    std::stringstream ss;
+    ss << "Enter acre count to sell:";
+    return ss.str();
+}
+
+
+string TestGameLogger::GetWheatFoodText(City& city)
+{
+    std::stringstream ss;
+    ss << "Enter wheat amount to food:";
+    return ss.str();
+}
+
+
+string TestGameLogger::GetWheatSeedText(City& city)
+{
+    std::stringstream ss;
+    ss << "Enter wheat amount to seed:";
+    return ss.str();
+}
+
+
 string TestGameLogger::GetPlayerInputReaction(City& city, PlayerInputResult result)
 {
     std::stringstream ss;

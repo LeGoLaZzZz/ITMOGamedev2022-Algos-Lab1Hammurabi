@@ -20,7 +20,10 @@ void RoundCityManagement::StartRoundManagement(City& city, HammurabiConfig& conf
 {
     acre_cost = config.GetRandomAcreCost();
     std::cout << logger.GetAcreCostText(city, acre_cost);
+
+    std::cout << logger.GetAcreBuyText(city);
     BuyAcres(city, config, logger);
+    std::cout << logger.GetAcreSellText(city);
     SellAcres(city, config, logger);
 }
 

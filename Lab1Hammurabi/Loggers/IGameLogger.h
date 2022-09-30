@@ -20,5 +20,10 @@ public:
     virtual std::string GetGameResultText(City& city, GameResultData result_data) =0;
     virtual std::string GetAcreCostText(City& city, int acre_cost) =0;
     
+    virtual std::string GetAcreBuyText(City& city) =0;
+    virtual std::string GetAcreSellText(City& city) =0;
+    virtual std::string GetWheatFoodText(City& city) =0;
+    virtual std::string GetWheatSeedText(City& city) =0;
+    
     virtual std::string GetPlayerInputReaction(City& city, PlayerInputResult result) =0;
 };
