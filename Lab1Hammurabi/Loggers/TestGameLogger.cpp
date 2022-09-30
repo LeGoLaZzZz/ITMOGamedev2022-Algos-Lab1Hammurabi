@@ -151,6 +151,13 @@ string TestGameLogger::AskLoadSave()
     return ss.str();
 }
 
+std::string TestGameLogger::CurrentRoundText(City& city, int round)
+{
+    std::stringstream ss;
+    ss << "___Round: " << round + 1 << "___";
+    return ss.str();
+}
+
 
 string TestGameLogger::GetPlayerInputReaction(City& city, PlayerInputResult result)
 {
@@ -174,5 +181,3 @@ string TestGameLogger::GetPlayerInputReaction(City& city, PlayerInputResult resu
 
     return ss.str();
 }
-
-

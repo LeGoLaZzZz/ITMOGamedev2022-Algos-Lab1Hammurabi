@@ -23,7 +23,9 @@ public:
         {
             IRoundAction* round_action = round_actions_[i];
             ActionResult action_result = round_action->DoRoundAction(city, config, shared_info, game_logger);
-            std::cout << action_result.ActionStatusInfo() << std::endl << std::endl;
+
+            string str = action_result.ActionStatusInfo();
+            if (str != "") std::cout << str << std::endl;
             lastResult = action_result.GetResultEnum();
             if (action_result.IsLoseResult())
             {

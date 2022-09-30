@@ -27,4 +27,7 @@ public:
     
     string GetGameLoseText(City& city, RoundResultEnum round_result_enum) override;
     string AskLoadSave() override;
+
+    
+    std::string CurrentRoundText(City& city, int round) override;
 };

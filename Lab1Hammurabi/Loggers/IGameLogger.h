@@ -30,4 +30,7 @@ public:
     virtual std::string GetGameLoseText(City& city, RoundResultEnum round_result_enum)=0;
     
     virtual std::string AskLoadSave() =0;
+
+    
+    virtual std::string CurrentRoundText(City& city, int round) =0;
 };

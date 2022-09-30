@@ -12,15 +12,17 @@
 #include "RoundActions/WheatIncomeAction.h"
 #include "Statistics/Statistic.h"
 #include "GameSaving//GameSave.h"
+#include "Loggers/BeautyGameLogger.h"
+
 
 using namespace std;
 
 int main()
 {
     srand(time(nullptr));
-
+    setlocale(LC_CTYPE, "rus");
     auto save_game = GameSave{};
-    auto logger = TestGameLogger{};
+    auto logger = BeautyGameLogger{};
 
     bool needLoad = false;
     if (save_game.HasSave())
@@ -80,13 +82,17 @@ int main()
     constexpr int rounds_count = 10;
 
     std::cout << logger.GetCityStatus(city) << std::endl;
+    RoundResultEnum round_result_enum;
+
     for (int i = start_round; i < rounds_count; ++i)
     {
-        std::cout << "___Round: " << i + 1 << "___" << std::endl << std::endl;
+        std::cout << logger.CurrentRoundText(city, i) << std::endl << std::endl;
+
         cityManagement.StartRoundManagement(city, config, logger);
         auto round = Round(round_actions, 5);
-        auto round_result_enum = round.PlayRound(city, config, logger);
+        round_result_enum = round.PlayRound(city, config, logger);
         statistic.EndRoundStat(round, city);
+
         if (round_result_enum != kRoundResultOk)
         {
             std::cout << logger.GetGameLoseText(city, round_result_enum);
@@ -95,7 +101,7 @@ int main()
         save_game.Save(city, statistic, i);
     }
 
-    std::cout << logger.GetGameResultText(city, statistic.GetGameResult(city));
+    if (round_result_enum == kRoundResultOk) std::cout << logger.GetGameResultText(city, statistic.GetGameResult(city));
 
 
     return 0;

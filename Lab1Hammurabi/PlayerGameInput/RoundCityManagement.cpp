@@ -121,7 +121,7 @@ void RoundCityManagement::BuyAcres(City& city, HammurabiConfig& config, IGameLog
     city.RemoveWheatAmount(acres_to_buy * acre_cost);
     city.AddAcres(acres_to_buy);
 
-    cout << logger.GetCityStatus(city);
+    cout << endl << logger.GetCityStatus(city);
 }
 
 void RoundCityManagement::SellAcres(City& city, HammurabiConfig& config, IGameLogger& logger)
@@ -141,7 +141,7 @@ void RoundCityManagement::SellAcres(City& city, HammurabiConfig& config, IGameLo
     city.AddWheatAmount(acres_to_sell * acre_cost);
     city.RemoveAcres(acres_to_sell);
 
-    cout << logger.GetCityStatus(city);
+    cout << endl << logger.GetCityStatus(city);
 }
 
 void RoundCityManagement::WheatToFood(City& city, HammurabiConfig& config, IGameLogger& logger)
