@@ -22,7 +22,7 @@ int main()
     srand(time(nullptr));
     setlocale(LC_CTYPE, "rus");
     auto save_game = GameSave{};
-    auto logger = BeautyGameLogger{};
+    auto logger = TestGameLogger{};
 
     bool needLoad = false;
     if (save_game.HasSave())
