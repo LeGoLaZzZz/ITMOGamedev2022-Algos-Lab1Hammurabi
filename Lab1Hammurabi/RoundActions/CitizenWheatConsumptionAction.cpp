@@ -5,7 +5,7 @@
 ActionResult CitizenWheatConsumptionAction::DoRoundAction(City& city, HammurabiConfig& config,
                                                           RoundSharedInfo& shared_info, IGameLogger& logger)
 {
-    int citizenCanAlive = city.GetWheatAmount() / config.citizen_wheat_consumption;
+    int citizenCanAlive = city.GetWheatToFood() / config.citizen_wheat_consumption;
     int deadCitizen = city.GetCitizenAmount() - citizenCanAlive;
 
     int deadPercentage = 0;
@@ -24,7 +24,10 @@ ActionResult CitizenWheatConsumptionAction::DoRoundAction(City& city, HammurabiC
     bool isLose = deadPercentage >= config.citizen_starved_lose_condition;
 
     int wheat_consumed = citizenCanAlive * config.citizen_wheat_consumption;
-    city.RemoveWheatAmount(wheat_consumed);
+
+    int remain = city.GetWheatToFood() - wheat_consumed;
+    city.AddWheatAmount(remain);
+    city.RemoveWheatToFood(wheat_consumed);
 
     string result_status_info = logger.GetStatusCitizenWheatConsumption(city, wheat_consumed, deadPercentage,
                                                                         deadCitizen);

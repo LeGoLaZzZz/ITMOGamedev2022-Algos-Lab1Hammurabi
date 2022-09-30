@@ -155,6 +155,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="City.cpp" />
+    <ClCompile Include="GameSaving\GameSave.cpp" />
     <ClCompile Include="Loggers\IGameLogger.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -240,6 +241,7 @@
     <ClCompile Include="RoundActions\WheatIncomeAction.cpp" />
     <ClCompile Include="Round\Round.cpp" />
     <ClCompile Include="Statistics\Statistic.cpp" />
+    <ClInclude Include="GameSaving\GameSave.h" />
     <ClInclude Include="Loggers\IGameLogger.h" />
     <ClInclude Include="Loggers\TestGameLogger.h" />
     <ClInclude Include="PlayerGameInput\RoundCityManagement.h" />

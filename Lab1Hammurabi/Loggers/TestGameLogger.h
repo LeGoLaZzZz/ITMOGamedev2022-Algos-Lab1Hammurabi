@@ -3,6 +3,7 @@
 
 #include "IGameLogger.h"
 #include "../City.h"
+#include "../Round/RoundResultEnum.h"
 using namespace std;
 
 class TestGameLogger : public IGameLogger
@@ -20,7 +21,10 @@ public:
     std::string GetAcreBuyText(City& city) override;
     std::string GetAcreSellText(City& city) override;
     std::string GetWheatFoodText(City& city) override;
-    std::string GetWheatSeedText(City& city) override;
+    std::string GetAcresSeedText(City& city) override;
     
     std::string GetPlayerInputReaction(City& city, PlayerInputResult result) override;
+    
+    string GetGameLoseText(City& city, RoundResultEnum round_result_enum) override;
+    string AskLoadSave() override;
 };

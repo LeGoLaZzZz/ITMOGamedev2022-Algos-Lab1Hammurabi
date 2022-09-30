@@ -28,4 +28,9 @@ private:
     bool is_lose_result_ = false;
     string action_status_info_;
     RoundResultEnum result_enum_ = kRoundResultOk;
+public:
+    RoundResultEnum GetResultEnum() const
+    {
+        return result_enum_;
+    }
 };

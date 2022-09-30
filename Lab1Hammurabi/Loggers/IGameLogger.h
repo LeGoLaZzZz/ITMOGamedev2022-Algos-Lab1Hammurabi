@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "../City.h"
+#include "../Round/RoundResultEnum.h"
 #include "../PlayerGameInput/RoundCityManagement.h"
 
 class GameResultData;
@@ -23,7 +24,10 @@ public:
     virtual std::string GetAcreBuyText(City& city) =0;
     virtual std::string GetAcreSellText(City& city) =0;
     virtual std::string GetWheatFoodText(City& city) =0;
-    virtual std::string GetWheatSeedText(City& city) =0;
+    virtual std::string GetAcresSeedText(City& city) =0;
     
     virtual std::string GetPlayerInputReaction(City& city, PlayerInputResult result) =0;
+    virtual std::string GetGameLoseText(City& city, RoundResultEnum round_result_enum)=0;
+    
+    virtual std::string AskLoadSave() =0;
 };

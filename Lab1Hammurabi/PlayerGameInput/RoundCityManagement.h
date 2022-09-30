@@ -20,13 +20,13 @@ class RoundCityManagement
 {
 public:
     void StartRoundManagement(City& city, HammurabiConfig& config, IGameLogger& logger);
-    int ReadUserInputInteger(City& city, IGameLogger& logger);
+    int ReadUserInputInteger(City& city, IGameLogger& logger, std::string& preInputText);
     PlayerInputResult BuyAcresConditions(City& city, int integer_input);
    
 private:
     int acre_cost = 0;
     int ReadParamLoop(City& city, HammurabiConfig& config, IGameLogger& logger,
-                      std::function<PlayerInputResult(int)>& conditions_func);
+                      std::string& preInputText, std::function<PlayerInputResult(int)>& conditions_func);
     void BuyAcres(City& city, HammurabiConfig& config, IGameLogger& logger);
     void SellAcres(City& city, HammurabiConfig& config, IGameLogger& logger);
     void WheatToFood(City& city, HammurabiConfig& config, IGameLogger& logger);

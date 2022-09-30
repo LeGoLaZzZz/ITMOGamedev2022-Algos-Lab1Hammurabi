@@ -67,7 +67,9 @@ string TestGameLogger::GetCityStatus(City& city)
     std::stringstream ss;
 
     ss << "_CityStatus_" << endl;
-    ss << "  Wheat total:" << to_string(city.GetWheatAmount()) << endl;
+    ss << "  Wheat in ambars:" << to_string(city.GetWheatAmount()) << endl;
+    ss << "  Wheat on food:" << to_string(city.GetWheatToFood()) << endl;
+    ss << "  Wheat on seed:" << to_string(city.GetWheatToSeed()) << endl;
     ss << "  Citizen total:" << to_string(city.GetCitizenAmount()) << endl;
     ss << "  Acre total:" << to_string(city.GetAcreAmount()) << endl;
 
@@ -81,6 +83,24 @@ string TestGameLogger::GetGameResultText(City& city, GameResultData result_data)
     ss << "  result:" << to_string(result_data.result) << endl;
     ss << "  average_hunger_percentage_P:" << to_string(result_data.average_hunger_percentage_P) << endl;
     ss << "  acre_per_citizen_L:" << to_string(result_data.acre_per_citizen_L) << endl;
+
+    return ss.str();
+}
+
+string TestGameLogger::GetGameLoseText(City& city, RoundResultEnum round_result_enum)
+{
+    std::stringstream ss;
+    ss << "___GameLose___" << endl;
+
+    switch (round_result_enum)
+    {
+    case kStarve: ss << " kStarve" << endl;
+        break;
+    case kNoCitizen: ss << " kNoCitizen" << endl;
+        break;
+    case kRoundResultOk: break;
+    default: ;
+    }
 
     return ss.str();
 }
@@ -117,10 +137,17 @@ string TestGameLogger::GetWheatFoodText(City& city)
 }
 
 
-string TestGameLogger::GetWheatSeedText(City& city)
+string TestGameLogger::GetAcresSeedText(City& city)
 {
     std::stringstream ss;
     ss << "Enter wheat amount to seed:";
+    return ss.str();
+}
+
+string TestGameLogger::AskLoadSave()
+{
+    std::stringstream ss;
+    ss << "Wanna load saved game? y/n:";
     return ss.str();
 }
 
@@ -147,3 +174,5 @@ string TestGameLogger::GetPlayerInputReaction(City& city, PlayerInputResult resu
 
     return ss.str();
 }
+
+

@@ -5,6 +5,10 @@ class City
     int citizen_amount_ = 0;
     float wheat_amount_ = 0;
     int acre_amount_ = 0;
+
+    float wheat_to_seed_amount_ = 0;
+    float wheat_to_food_amount_ = 0;
+
 public:
     City(int citizen_amount, float wheat_amount, int acre_amount)
         : citizen_amount_(citizen_amount),
@@ -34,4 +38,17 @@ public:
     void AddCitizen(int citizen_income);
     void AddAcres(int acres_income);
     void RemoveAcres(int acres_income);
+
+    bool AddWheatToFood(int wheat_to_food);
+    bool AddWheatToSeed(int wheat_to_seed);
+    int GetWheatToSeed();
+    int GetWheatToFood();
+    void RemoveWheatToFood(int wheat_consumed);
+    void RemoveWheatToSeed(int wheat_consumed);
+
+    void LoadData(int citizen_amount_ = 0,
+                  float wheat_amount_ = 0,
+                  int acre_amount_ = 0,
+                  float wheat_to_seed_amount_ = 0,
+                  float wheat_to_food_amount_ = 0);
 };

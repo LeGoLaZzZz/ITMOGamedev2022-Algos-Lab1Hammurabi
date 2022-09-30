@@ -16,21 +16,22 @@ class Round
 public:
     RoundSharedInfo shared_info;
 
-    void PlayRound(City& city, HammurabiConfig& config, IGameLogger& game_logger)
+    RoundResultEnum PlayRound(City& city, HammurabiConfig& config, IGameLogger& game_logger)
     {
+        RoundResultEnum lastResult;
         for (int i = 0; i < round_actions_count_; ++i)
         {
             IRoundAction* round_action = round_actions_[i];
             ActionResult action_result = round_action->DoRoundAction(city, config, shared_info, game_logger);
-            std::cout << action_result.ActionStatusInfo() << std::endl<< std::endl;
-
+            std::cout << action_result.ActionStatusInfo() << std::endl << std::endl;
+            lastResult = action_result.GetResultEnum();
             if (action_result.IsLoseResult())
             {
-                std::cout << "bro you lost";
                 break;
             }
         }
         std::cout << game_logger.GetCityStatus(city) << std::endl;
+        return lastResult;
     }
 
 

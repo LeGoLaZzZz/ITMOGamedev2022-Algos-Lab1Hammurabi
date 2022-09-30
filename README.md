@@ -15,10 +15,18 @@
 
 # Lab1Hammurabi
 
-### Конспект тз
+- Хотел разделить логику игры и UI пользователя, чтобы условно можно было легко поменять работу из консоли на некий интерфейс, который в саму игру чисто бы посылал действия игрока. Но что-то по неопотности в плюсах не вышло и уже делал чтобы заработало
+
+
+
+
+
+
+
+### Конспект тз + рассуждения
 <details>
 <summary>
-Конспект тз
+Конспект тз + рассуждения
 </summary>
 
 - раунд
@@ -42,7 +50,6 @@
   - 0 население
   - % смертей от голода
 
-</details>
 
 
 ### Действия
@@ -72,7 +79,7 @@
   - int CitizenWheatConsumption
   - int CitizenAcreHandleCount
   - int CitizenSeedWheatCost
-  
+
 - Round
   - int Number
   - RoundActions
@@ -81,10 +88,10 @@
     - Rats
       - int RatsAtePercentage
     - CitizenWheatConsumption
-    - LoseCondition Starve 
-    - Citizen Income 
+    - LoseCondition Starve
+    - Citizen Income
     - Plaque
-      - bool WasPlaque 
+      - bool WasPlaque
     - int AcrePrice
   - HungerDeathCount
 
@@ -94,7 +101,9 @@
   - Среднеегодовая смертность
   - Кол-во акров на жителя
   - результат-оценка
- 
+
+</details>
+
 
 
 
