@@ -1,0 +1,6 @@
+# ninja log v5
+3	287	6861711325642007	CMakeFiles/Lab1Hammurabi.dir/Lab1Hammurabi/RoundActions/ActionResultBuilder.cpp.obj	8c0a591e1e8e22f1
+0	300	6861711325712032	CMakeFiles/Lab1Hammurabi.dir/Lab1Hammurabi/Loggers/IGameLogger.cpp.obj	811b7df671aebf82
+12	301	6861711325742028	CMakeFiles/Lab1Hammurabi.dir/Lab1Hammurabi/RoundActions/ActionResult.cpp.obj	c8f112b4289da1e2
+6	302	6861711325742028	CMakeFiles/Lab1Hammurabi.dir/Lab1Hammurabi/Loggers/TestGameLogger.cpp.obj	cae8926011e0ebb7
+18	312	6861711325912067	CMakeFiles/Lab1Hammurabi.dir/Lab1Hammurabi/RoundActions/IRoundAction.cpp.obj	baef445d705eb8a4
